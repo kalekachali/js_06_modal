@@ -1,0 +1,67 @@
+// Overides
+body {
+
+	.modal-screen {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0, 0.8);
+		z-index: -1;
+		display: none;
+		visibility: hidden;
+		align-items: center;
+		justify-content: center;
+
+		.modal-itself {
+			@extend .p-4;
+			background-color: #fff;
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+
+			animation-name: modalAnimation;
+			animation-duration: .4s;
+
+			.title {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				> * {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	.modal-screen.show {
+		display: flex;
+		visibility: visible;
+		z-index: 1;
+	}
+}
+
+@keyframes modalAnimation {
+
+	from {
+		margin-top: -600px;
+		opacity: 0;
+	}
+
+	to {
+		margin-top: 0;
+		opacity: 1;
+	}	
+}
+
+// Import bootstrap sass files
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+//Import fontawesome sass files
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
